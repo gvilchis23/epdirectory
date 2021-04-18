@@ -1,0 +1,18 @@
+
+Focus Areas:
+i tried to implemented a define architecture design pattern using MVVM + tried to separate in different modules what i think are different reusable layers, like repository and any feature module that came out.
+i did not copy any class entirely but i did copy snapshot code for when i need, usually on the view model and the adapter part.
+I used a samsung s8 device for testing purposes with android 9.0
+i spent around 3 hours creating the project structure and coding the happy path of retrieving data and presenting in a recycler view, and another around 2 and half hours doing refactor, cleaning code and fixing bugs or adding edge case scenarios like caching or networking errors etc.
+
+
+I build the project to tried to separate testeable code from classess that are not worth to test like activities, but i did not have time of implementing the unit testing, i only create the classes that i would test on this architecture.
+For the image caching i am using Glide, it comes with caching capabilities by default.
+I did not focus to much on the styles, or presentation of the ui, so its not that elaborate, just playing some visibilities for empty list or showing a toast when i am getting errors.
+
+Frameworks
+implementation 'com.squareup.retrofit2:retrofit:2.7.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.7.2'
+    implementation 'com.squareup.okhttp3:okhttp:3.6.0'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'

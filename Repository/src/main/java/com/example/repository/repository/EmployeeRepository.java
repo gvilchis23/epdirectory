@@ -34,14 +34,13 @@ public class EmployeeRepository {
                 if (response.isSuccessful()){
                     employeeData.setValue(response.body());
                 } else  {
-                    //this can be handle with a wrapper class and a generic error handler
-                    employeeData.setValue(new EmployeeResponse(new Error("some HTTP error code",null)));
+                    //this can be handle with a wrapper class and a generics.
+                    employeeData.setValue(new EmployeeResponse(new Error("HTTP Error from server",null)));
                 }
             }
 
             @Override
             public void onFailure(Call<EmployeeResponse> call, Throwable t) {
-                //this can be handle with a wrapper class and a generic error handler
                 employeeData.setValue(new EmployeeResponse(new Error(t.getMessage(),t)));
             }
         });

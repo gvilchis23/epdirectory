@@ -12,6 +12,7 @@ import com.example.feature_empdirectory.R;
 import com.example.feature_empdirectory.glidemodule.GlideApp;
 import com.example.repository.model.Employees;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import androidx.annotation.NonNull;
@@ -22,8 +23,8 @@ public class EmployeeAdapter extends RecyclerView.Adapter<EmployeeAdapter.Employ
     Context context;
     List<Employees> employees;
 
-    public EmployeeAdapter(List<Employees> employees) {
-        this.employees = employees;
+    public EmployeeAdapter() {
+        employees = new ArrayList<>();
     }
 
     @NonNull
@@ -38,9 +39,8 @@ public class EmployeeAdapter extends RecyclerView.Adapter<EmployeeAdapter.Employ
         holder.epName.setText(employees.get(position).getFullName());
         holder.epEmail.setText(employees.get(position).getTeam());
         GlideApp.with(context).load(employees.get(position).getPhotoUrlLarge())
-                .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
-                .onlyRetrieveFromCache(true)
-                .into(holder.epImage);
+                 .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
+                 .into(holder.epImage);
     }
 
     @Override
@@ -52,6 +52,13 @@ public class EmployeeAdapter extends RecyclerView.Adapter<EmployeeAdapter.Employ
     @Override
     public int getItemCount() {
         return employees.size();
+    }
+
+    public void update(final List<Employees> employeeData) {
+        //having a bug of the recycler view state after rotating, didnt have enough time for a better solution, so i added clear().
+        employees.clear();
+        employees.addAll(employeeData);
+        notifyDataSetChanged();
     }
 
     public class EmployeeViewHolder extends RecyclerView.ViewHolder{
