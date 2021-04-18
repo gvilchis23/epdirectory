@@ -1,6 +1,5 @@
 package com.example.feature_empdirectory.viewmodel;
 
-import com.example.feature_empdirectory.adapter.EmployeeAdapter;
 import com.example.repository.model.EmployeeResponse;
 import com.example.repository.repository.EmployeeRepository;
 
@@ -20,16 +19,11 @@ public class EmployeeViewModel extends ViewModel {
         } else {
             return;
         }
-
-
     }
 
     public LiveData<EmployeeResponse> getEmployeeRepository() {
         return mutableLiveData;
     }
 
-    public EmployeeAdapter getEmployeeAdapter() {
-        return mutableLiveData;
-    }
 
 }
