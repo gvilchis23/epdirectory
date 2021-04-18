@@ -7,16 +7,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.feature_empdirectory.R;
-import com.example.feature_empdirectory.adapter.EmployeeAdapter;
 import com.example.feature_empdirectory.viewmodel.EmployeeViewModel;
 import com.example.repository.model.Employees;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
+
+/**
+ * Created by memoPilgrim on 04/17/21.
+ * */
 
 public class DirectoryActivity extends AppCompatActivity {
 
