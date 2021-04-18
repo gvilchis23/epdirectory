@@ -1,0 +1,4 @@
+include ':feature-empDirectory'
+include ':Repository'
+include ':app'
+rootProject.name = "Square"
